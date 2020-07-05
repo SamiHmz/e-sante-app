@@ -33,30 +33,34 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imageView101"
-                android:layout_width="50dp"
-                android:layout_height="45dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/arrondi"
                 android:src="@drawable/gear"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView103"
+                app:layout_constraintStart_toEndOf="@+id/imageButton2"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView102"
-                android:layout_width="50dp"
-                android:layout_height="45dp"
-                android:src="@drawable/browser"
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/arrondi"
+                android:src="@drawable/browser2"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView103"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.48000002" />
 
-            <ImageView
-                android:id="@+id/imageView103"
-                android:layout_width="50dp"
-                android:layout_height="45dp"
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/arrondi"
                 android:src="@drawable/heart"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -65,14 +69,15 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageView18"
-        android:layout_width="39dp"
-        android:layout_height="39dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/ic_arrow_back_48px"
+        android:layout_marginTop="20dp"
+        android:background="#EBEBEB"
+        android:src="@drawable/ic_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
