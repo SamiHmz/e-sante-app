@@ -25,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/DemandeDoctor_imageButton_retour"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="30dp"
@@ -45,10 +45,10 @@
             android:layout_marginTop="68dp"
             android:text="Symptomes "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+            app:layout_constraintTop_toBottomOf="@+id/DemandeDoctor_imageButton_retour" />
 
         <TextView
-            android:id="@+id/textView34"
+            android:id="@+id/DemandeDoctor_textview_symptomes"
             android:layout_width="302dp"
             android:layout_height="40dp"
             android:layout_marginTop="15dp"
@@ -67,10 +67,10 @@
             android:layout_marginTop="30dp"
             android:text="Autre Symtomes "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView34" />
+            app:layout_constraintTop_toBottomOf="@+id/DemandeDoctor_textview_symptomes" />
 
         <TextView
-            android:id="@+id/textView36"
+            android:id="@+id/DemandeDoctor_textview_AutreSymptomes"
             android:layout_width="295dp"
             android:layout_height="57dp"
             android:layout_marginTop="15dp"
@@ -89,10 +89,10 @@
             android:layout_marginTop="30dp"
             android:text="Traitement"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView36" />
+            app:layout_constraintTop_toBottomOf="@+id/DemandeDoctor_textview_AutreSymptomes" />
 
         <TextView
-            android:id="@+id/textView38"
+            android:id="@+id/DemandeDoctor_textview_traitement"
             android:layout_width="291dp"
             android:layout_height="70dp"
             android:layout_marginTop="12dp"
@@ -111,10 +111,10 @@
             android:layout_marginTop="30dp"
             android:text="Photo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView38" />
+            app:layout_constraintTop_toBottomOf="@+id/DemandeDoctor_textview_traitement" />
 
         <ImageView
-            android:id="@+id/imageView28"
+            android:id="@+id/DemandeDoctor_ImageView_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -124,7 +124,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView39" />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/DemandeDoctor_button_traité"
             android:layout_width="281dp"
             android:layout_height="60dp"
             android:layout_marginTop="24dp"
@@ -133,7 +133,7 @@
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView28" />
+            app:layout_constraintTop_toBottomOf="@+id/DemandeDoctor_ImageView_photo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

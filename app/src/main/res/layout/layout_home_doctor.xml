@@ -31,7 +31,7 @@
                 app:srcCompat="@drawable/groupe_3" />
 
             <TextView
-                android:id="@+id/textView24"
+                android:id="@+id/LayoutHomeDoctor_textview_nom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -50,12 +50,14 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="22dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView9"
-                app:layout_constraintTop_toBottomOf="@+id/textView24"
+                app:layout_constraintTop_toBottomOf="@+id/LayoutHomeDoctor_textview_nom"
+                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/ic_update_48px" />
 
             <TextView
-                android:id="@+id/textView27"
+                android:id="@+id/LayoutHomeDoctor_textview_temps"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -64,20 +66,23 @@
                 android:fontFamily="@font/maax_rounded"
                 android:text="il ya 20 minutes"
                 android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
-                app:layout_constraintTop_toBottomOf="@+id/textView24" />
+                app:layout_constraintTop_toBottomOf="@+id/LayoutHomeDoctor_textview_nom"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/textView28"
+                android:id="@+id/LayoutHomeDoctor_textview_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="68dp"
                 android:fontFamily="@font/maax_rounded"
                 android:text="26, mai 2020"
                 android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView27"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/LayoutHomeDoctor_textview_temps"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.85" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

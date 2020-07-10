@@ -10,21 +10,20 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/consultation_recyclerView"
         android:layout_width="333dp"
         android:layout_height="436dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView100"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView18" />
+        app:layout_constraintTop_toBottomOf="@+id/consultation_imagebutton_retour" />
 
 
 
     <ImageButton
-        android:id="@+id/imageView18"
+        android:id="@+id/consultation_imagebutton_retour"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="30dp"

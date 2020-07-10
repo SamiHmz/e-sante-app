@@ -14,7 +14,7 @@
         android:paddingBottom="40dp">
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/traitementDoctor_imageButton_retour"
             android:layout_width="16dp"
             android:layout_height="38dp"
             android:layout_marginStart="30dp"
@@ -48,7 +48,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/traitementDoctor_edittext_Diagnostique"
             android:layout_width="295dp"
             android:layout_height="156dp"
             android:layout_marginTop="20dp"
@@ -73,10 +73,10 @@
             android:layout_marginTop="20dp"
             android:text="Traitement"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText7" />
+            app:layout_constraintTop_toBottomOf="@+id/traitementDoctor_edittext_Diagnostique" />
 
         <EditText
-            android:id="@+id/editText8"
+            android:id="@+id/traitementDoctor_edittext_traitement"
             android:layout_width="295dp"
             android:layout_height="156dp"
             android:layout_marginTop="20dp"
@@ -93,7 +93,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView42" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/traitementDoctor_button_Envoyer"
             android:layout_width="236dp"
             android:layout_height="47dp"
             android:layout_marginTop="40dp"
@@ -103,6 +103,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText8" />
+            app:layout_constraintTop_toBottomOf="@+id/traitementDoctor_edittext_traitement" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity_doctor"></activity>
-        <activity android:name=".Activity_bottom_nav_bar" />
+        <activity android:name=".Activity_patient" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

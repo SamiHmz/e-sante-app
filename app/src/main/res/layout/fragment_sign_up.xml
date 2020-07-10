@@ -59,7 +59,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/editText32"
+                    android:id="@+id/Signup_editText_Nom"
                     android:layout_width="236dp"
                     android:layout_height="46dp"
                     android:ems="10"
@@ -77,7 +77,7 @@
                     android:layout_height="45dp"
                     android:background="#888AA1"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/editText32"
+                    app:layout_constraintEnd_toStartOf="@+id/Signup_editText_Nom"
                     app:layout_constraintStart_toEndOf="@+id/imageView31"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -110,7 +110,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/editText42"
+                    android:id="@+id/Signup_editText_prenom"
                     android:layout_width="236dp"
                     android:layout_height="46dp"
                     android:ems="10"
@@ -127,7 +127,7 @@
                     android:layout_height="45dp"
                     android:background="#888AA1"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/editText42"
+                    app:layout_constraintEnd_toStartOf="@+id/Signup_editText_prenom"
                     app:layout_constraintStart_toEndOf="@+id/imageView41"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -171,7 +171,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/editText52"
+                    android:id="@+id/Signup_editText_Numero"
                     android:layout_width="236dp"
                     android:layout_height="46dp"
                     android:ems="10"
@@ -189,7 +189,7 @@
                     android:layout_height="45dp"
                     android:background="#888AA1"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/editText52"
+                    app:layout_constraintEnd_toStartOf="@+id/Signup_editText_Numero"
                     app:layout_constraintStart_toEndOf="@+id/imageView51"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -233,7 +233,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/editText62"
+                    android:id="@+id/Signup_editText_Email"
                     android:layout_width="236dp"
                     android:layout_height="46dp"
                     android:ems="10"
@@ -251,7 +251,7 @@
                     android:layout_height="45dp"
                     android:background="#888AA1"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/editText62"
+                    app:layout_constraintEnd_toStartOf="@+id/Signup_editText_Email"
                     app:layout_constraintStart_toEndOf="@+id/imageView61"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -267,67 +267,6 @@
             app:layout_constraintHorizontal_bias="0.132"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView50" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView70"
-            android:layout_width="297dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/arrondi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView19">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imageView71"
-                    android:layout_width="26dp"
-                    android:layout_height="43dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_lock_48px"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <EditText
-                    android:id="@+id/editText72"
-                    android:layout_width="236dp"
-                    android:layout_height="46dp"
-                    android:ems="10"
-                    android:fontFamily="@font/maax_rounded"
-                    android:hint="Entrer votre mot de pass"
-                    android:inputType="textPassword"
-                    android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView73"
-                    android:layout_width="1dp"
-                    android:layout_height="45dp"
-                    android:background="#888AA1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/editText72"
-                    app:layout_constraintStart_toEndOf="@+id/imageView71"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Mot de Pass"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.151"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView60" />
 
 
         <androidx.cardview.widget.CardView
@@ -356,7 +295,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Spinner
-                    android:id="@+id/editText82"
+                    android:id="@+id/Signup_spiner_Wilaya"
                     android:layout_width="228dp"
                     android:layout_height="43dp"
                     android:background="@drawable/style_spinner"
@@ -372,7 +311,7 @@
                     android:layout_height="45dp"
                     android:background="#888AA1"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/editText82"
+                    app:layout_constraintEnd_toStartOf="@+id/Signup_spiner_Wilaya"
                     app:layout_constraintStart_toEndOf="@+id/imageView81"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -390,7 +329,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.134"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView70" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView60" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView90"
@@ -418,7 +357,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Spinner
-                    android:id="@+id/editText92"
+                    android:id="@+id/Signup_spinner_commune"
                     android:layout_width="225dp"
                     android:layout_height="47dp"
                     android:background="@drawable/style_spinner"
@@ -434,7 +373,7 @@
                     android:layout_height="45dp"
                     android:background="#888AA1"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/editText92"
+                    app:layout_constraintEnd_toStartOf="@+id/Signup_spinner_commune"
                     app:layout_constraintStart_toEndOf="@+id/imageView91"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -453,7 +392,7 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView80" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/Signup_button_Sinscrire"
             android:layout_width="256dp"
             android:layout_height="52dp"
             android:layout_marginTop="40dp"

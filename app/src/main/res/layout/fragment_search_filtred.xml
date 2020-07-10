@@ -24,18 +24,18 @@
             android:layout_height="match_parent">
 
             <ImageButton
-                android:id="@+id/imageView22"
+                android:id="@+id/SearchFiltered_imagebutton_recherche"
                 android:layout_width="29dp"
                 android:layout_height="32dp"
                 android:background="@drawable/arrondi"
                 android:src="@drawable/search"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/editText24"
+                app:layout_constraintStart_toEndOf="@+id/SearchFiltered_editText_recherche"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editText24"
+                android:id="@+id/SearchFiltered_editText_recherche"
                 android:layout_width="237dp"
                 android:layout_height="35dp"
                 android:ems="10"
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView44" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview25"
+        android:id="@+id/SearchFiltered_recyclerview"
         android:layout_width="351dp"
         android:layout_height="342dp"
         android:layout_marginStart="20dp"
