@@ -18,11 +18,11 @@
             android:id="@+id/demandeconsultation_imagebutton_retour"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
             android:background="#EBEBEB"
             android:src="@drawable/ic_arrow_back"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -243,16 +243,17 @@
 
         <TableRow
             android:id="@+id/tableRow8"
-            android:layout_width="307dp"
-            android:layout_height="45dp"
+            android:layout_width="311dp"
+            android:layout_height="47dp"
             android:layout_margin="5dp"
+            android:gravity="center|clip_vertical|center_horizontal|center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tableRow2">
 
             <Button
                 android:id="@+id/demandeconsultation_Button_Diarrhée"
-                android:layout_width="72dp"
+                android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_margin="0dp"
                 android:background="@drawable/arrondi"

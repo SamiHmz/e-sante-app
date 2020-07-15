@@ -7,7 +7,7 @@
     tools:context=".Activity_patient">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigationview"
+        android:id="@+id/btn_navbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -23,11 +23,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_navigation" />
 
-    <FrameLayout
+    <fragment
+        android:id="@+id/nav_fragment_patient"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/frameLayout"
-        android:layout_above="@+id/bottom_navigationview">
+        android:layout_height="601dp"
+        android:layout_above="@+id/btn_navbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="2dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/graph_patient1" />
 
-    </FrameLayout>
 </RelativeLayout>

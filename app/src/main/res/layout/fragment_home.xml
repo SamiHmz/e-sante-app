@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/nav_fragment_doctor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EBEBEB"
@@ -53,12 +53,11 @@
     </androidx.cardview.widget.CardView>
 
     <ImageButton
-        android:id="@+id/home_imagebutton_filtre"
-        android:layout_width="42dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="24dp"
-        android:background="#EBEBEB"
-        android:src="@drawable/filter"
+        android:id="@+id/home_ImageView_fillter"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/filter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toEndOf="@+id/cardView3"
@@ -67,12 +66,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/home_recyclerview"
         android:layout_width="350dp"
-        android:layout_height="450dp"
+        android:layout_height="384dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView5" />
 
     <TextView
         android:id="@+id/textView23"
@@ -84,6 +83,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="310dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+        <Spinner
+            android:id="@+id/home_spinner_filtre"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/style_spinner"
+            android:visibility="visible" />
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

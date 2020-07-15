@@ -1,33 +1,23 @@
 package com.example.e_sante
 
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.example.e_sante.entities.login_entity
+import kotlinx.android.synthetic.main.fragment_login.*
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Login.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Login : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,25 +25,68 @@ class Login : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login, container, false)
+
+
+        }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+
+
+        login_button_SeCommencer.setOnClickListener{
+           var loginentity = login_entity(login_editText_numero.text.toString(),login_edittext_MotDePass.text.toString())
+            login_medcin(loginentity)
+        }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Login.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Login().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+private fun login_medcin(login:login_entity){
+
+    val call = RetrofitService.endpoint.login_doctor(login)
+    call.enqueue(object : Callback<ResponseBody> {
+        override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+            Toast.makeText(activity?.applicationContext,"error : veuiilez verifier votre connexion puis reessayer 00", Toast.LENGTH_SHORT).show()
+        }
+
+        override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+            if(response.isSuccessful){
+
+                var sp : SharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity?.applicationContext)
+                var edit : SharedPreferences.Editor = sp.edit()
+                edit.putString("x-auth-token",response.body()!!.string())
+                edit.apply()
+                val intent = Intent(getActivity(),activity_doctor::class.java)
+                startActivity(intent)
+
+            }else{
+                Toast.makeText(activity?.applicationContext,"${response.errorBody()?.string()}", Toast.LENGTH_SHORT).show()
+
             }
-    }
+        }
+
+    })
+
+}
+
+private fun login_patient(login:login_entity){
+    val call = RetrofitService.endpoint.login_patient(login)
+    call.enqueue(object : Callback<String> {
+        override fun onFailure(call: Call<String>, t: Throwable) {
+            Toast.makeText(activity?.applicationContext,"erreur 3 ", Toast.LENGTH_SHORT).show()
+        }
+
+        override fun onResponse(call: Call<String>, response: Response<String>) {
+            if(response.isSuccessful){
+                Toast.makeText(activity?.applicationContext,response.toString(), Toast.LENGTH_SHORT).show()
+
+            }else{
+                Toast.makeText(activity?.applicationContext,"erreur 4 ", Toast.LENGTH_SHORT).show()
+
+            }
+        }
+
+
+    })
+}
+
 }

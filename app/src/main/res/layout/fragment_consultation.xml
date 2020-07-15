@@ -11,26 +11,22 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/consultation_recyclerView"
-        android:layout_width="333dp"
-        android:layout_height="436dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="341dp"
+        android:layout_height="468dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/consultation_imagebutton_retour" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
-
-    <ImageButton
-        android:id="@+id/consultation_imagebutton_retour"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:background="#EBEBEB"
-        android:src="@drawable/ic_arrow_back"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Consultation"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

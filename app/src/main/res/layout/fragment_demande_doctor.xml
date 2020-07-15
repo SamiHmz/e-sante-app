@@ -30,7 +30,7 @@
             android:layout_height="30dp"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:background="#EBEBEB"
             android:src="@drawable/ic_arrow_back"
             app:layout_constraintStart_toStartOf="parent"
@@ -125,8 +125,8 @@
 
         <Button
             android:id="@+id/DemandeDoctor_button_traité"
-            android:layout_width="281dp"
-            android:layout_height="60dp"
+            android:layout_width="244dp"
+            android:layout_height="45dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/arrondi_bleu"
             android:text="traiter"

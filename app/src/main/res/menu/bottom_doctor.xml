@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/navigation_home"
+    <item android:id="@+id/home_doctor"
         android:icon="@drawable/browser2"
         tools:ignore="MenuTitle" />
-    <item android:id="@+id/navigation_graph"
+
+    <item android:id="@+id/dashbord_doctor"
         android:icon="@drawable/graph"
         tools:ignore="MenuTitle" />
-    <item android:id="@+id/navigation_heart"
+
+    <item android:id="@+id/consultation_faite_doctor"
         android:icon="@drawable/heart2"
         tools:ignore="MenuTitle" />
-    <item android:id="@+id/navigation_gear"
+
+    <item android:id="@+id/gear"
         android:icon="@drawable/gear"
         tools:ignore="MenuTitle" />
 

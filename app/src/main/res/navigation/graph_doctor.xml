@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_doctor"
+    app:startDestination="@id/home_doctor">
+
+    <fragment
+        android:id="@+id/home_doctor"
+        android:name="com.example.e_sante.Home_doctor"
+        android:label="fragment_home_doctor"
+        tools:layout="@layout/fragment_home_doctor" >
+        <action
+            android:id="@+id/action_home_doctor_to_demande_doctor"
+            app:destination="@id/demande_doctor" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashbord_doctor"
+        android:name="com.example.e_sante.dashbord_doctor"
+        android:label="fragment_dashbord_doctor"
+        tools:layout="@layout/fragment_dashbord_doctor" />
+    <fragment
+        android:id="@+id/demande_doctor"
+        android:name="com.example.e_sante.Demande_doctor"
+        android:label="fragment_demande_doctor"
+        tools:layout="@layout/fragment_demande_doctor" >
+        <action
+            android:id="@+id/action_demande_doctor_to_traitement_doctor"
+            app:destination="@id/traitement_doctor" />
+    </fragment>
+    <fragment
+        android:id="@+id/traitement_doctor"
+        android:name="com.example.e_sante.traitement_doctor"
+        android:label="fragment_traitement_doctor"
+        tools:layout="@layout/fragment_traitement_doctor" />
+    <fragment
+        android:id="@+id/consultation_faite_doctor"
+        android:name="com.example.e_sante.consultation_faite_doctor"
+        android:label="fragment_consultation_faite_doctor"
+        tools:layout="@layout/fragment_consultation_faite_doctor" >
+        <action
+            android:id="@+id/action_consultation_faite_doctor_to_detail_consultation_traite_doctor"
+            app:destination="@id/detail_consultation_traite_doctor" />
+    </fragment>
+    <fragment
+        android:id="@+id/detail_consultation_traite_doctor"
+        android:name="com.example.e_sante.Detail_consultation_traite_doctor"
+        android:label="fragment_detail_consultation_traite_doctor"
+        tools:layout="@layout/fragment_detail_consultation_traite_doctor" >
+        <action
+            android:id="@+id/action_detail_consultation_traite_doctor_to_modifier_consultation_fait_doctor"
+            app:destination="@id/modifier_consultation_fait_doctor" />
+    </fragment>
+    <fragment
+        android:id="@+id/modifier_consultation_fait_doctor"
+        android:name="com.example.e_sante.Modifier_consultation_fait_doctor"
+        android:label="fragment_modifier_consultation_fait_doctor"
+        tools:layout="@layout/fragment_modifier_consultation_fait_doctor" />
+</navigation>

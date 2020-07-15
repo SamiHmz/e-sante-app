@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_patient1"
+    app:startDestination="@id/home2">
+
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.e_sante.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_demande_consultation"
+            app:destination="@id/demande_consultation" />
+    </fragment>
+    <fragment
+        android:id="@+id/demande_consultation"
+        android:name="com.example.e_sante.demande_consultation"
+        android:label="fragment_demande_consultation"
+        tools:layout="@layout/fragment_demande_consultation" />
+    <fragment
+        android:id="@+id/consultation"
+        android:name="com.example.e_sante.Consultation"
+        android:label="fragment_consultation"
+        tools:layout="@layout/fragment_consultation" >
+        <action
+            android:id="@+id/action_consultation_to_details_de_consultation"
+            app:destination="@id/details_de_consultation" />
+    </fragment>
+    <fragment
+        android:id="@+id/details_de_consultation"
+        android:name="com.example.e_sante.details_de_consultation"
+        android:label="fragment_details_de_consultation"
+        tools:layout="@layout/fragment_details_de_consultation" />
+    <fragment
+        android:id="@+id/demande_patient"
+        android:name="com.example.e_sante.Demande_patient"
+        android:label="fragment_demande_patient"
+        tools:layout="@layout/fragment_demande_patient" >
+        <action
+            android:id="@+id/action_demande_patient_to_detail_demande_patient"
+            app:destination="@id/detail_demande_patient" />
+    </fragment>
+    <fragment
+        android:id="@+id/detail_demande_patient"
+        android:name="com.example.e_sante.Detail_demande_patient"
+        android:label="fragment_detail_demande_patient"
+        tools:layout="@layout/fragment_detail_demande_patient" >
+        <action
+            android:id="@+id/action_detail_demande_patient_to_modifier_demande_patient"
+            app:destination="@id/modifier_demande_patient" />
+    </fragment>
+    <fragment
+        android:id="@+id/modifier_demande_patient"
+        android:name="com.example.e_sante.modifier_demande_patient"
+        android:label="fragment_modifier_demande_patient"
+        tools:layout="@layout/fragment_modifier_demande_patient" />
+</navigation>

@@ -17,10 +17,11 @@
             android:id="@+id/DetailConsultation_imageButton_retour"
             android:layout_width="25dp"
             android:layout_height="23dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:background="#EBEBEB"
             android:src="@drawable/ic_arrow_back"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,12 +29,12 @@
             android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="Détails de la consultation"
+            android:layout_marginTop="30dp"
+            android:text="More détails "
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/DetailConsultation_imageButton_retour" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/DetailConsultation_textview_diagnostique"
@@ -51,10 +52,12 @@
             android:id="@+id/textView46"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:text="Diagnostique "
-            app:layout_constraintTop_toBottomOf="@+id/textView21"
-            tools:layout_editor_absoluteX="47dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
         <TextView
             android:id="@+id/textView47"

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout15"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBEBEB"
+    tools:context=".modifier_demande_patient">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="40dp">
+
+        <ImageButton
+            android:id="@+id/ModifierDemandePatient_imagebutton_retour"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:background="#EBEBEB"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Button2011"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:text="Symptômes"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.121"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ModifierDemandePatient_imagebutton_retour" />
+
+        ///////////
+
+        <TableRow
+            android:id="@+id/tableRow611"
+            android:layout_width="310dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableRow311">
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_Alergie"
+                android:layout_width="61dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="Alergie"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_JambesLourdes"
+                android:layout_width="94dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="jambes lourdes"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_MalAuDos"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text=" Mal de dos"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_toux"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="Toux "
+                android:textSize="12sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow311"
+            android:layout_width="310dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Button2011">
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_Fatigue"
+                android:layout_width="63dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="Fatigue"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_Fievre"
+                android:layout_width="58dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="Fièvre"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_MalAuGorge"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="Mal de gorge"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_Grippe"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="Grippe"
+                android:textSize="12sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow411"
+            android:layout_width="307dp"
+            android:layout_height="47dp"
+            android:layout_margin="5dp"
+            android:gravity="center|clip_vertical|center_horizontal|center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableRow611">
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_Gastro"
+                android:layout_width="64dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="Gastro"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_MalDuVentre"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="Mal de ventre"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_Rhinite"
+                android:layout_width="57dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="Rhinite"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_Rhume"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="Rhume"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow211"
+            android:layout_width="311dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableRow411">
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_MaladiePsychosomatiques"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="Maladies psychosomatiques "
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_BrulureDestomac"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="Brûlures d'estomac"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow811"
+            android:layout_width="311dp"
+            android:layout_height="47dp"
+            android:layout_margin="5dp"
+            android:gravity="center|clip_vertical|center_horizontal|center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableRow211">
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_Diarrhée"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="0dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:padding="5dp"
+                android:text="Diarrhée"
+                android:textSize="12sp"
+
+                />
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_Constipation"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Constipation   "
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ModifierDemandePatient_Button_IrritationDuPeau"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/arrondi"
+                android:fontFamily="@font/maax_rounded"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Irritation du peau"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TextView
+            android:id="@+id/textView2011"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Autre Symptômes "
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.143"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableRow811" />
+
+        <EditText
+            android:id="@+id/ModifierDemandePatient_edittext_symptomes"
+            android:layout_width="283dp"
+            android:layout_height="196dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/arrondi"
+            android:ems="10"
+            android:fontFamily="@font/maax_rounded"
+            android:gravity="top|left"
+            android:hint="mentionner les autres symptomes ..."
+            android:inputType="textPersonName"
+            android:padding="7dp"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2011" />
+
+        <TextView
+            android:id="@+id/textView2511"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Traitements"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ModifierDemandePatient_edittext_symptomes" />
+
+        <EditText
+            android:id="@+id/ModifierDemandePatient_editText_traitement"
+            android:layout_width="285dp"
+            android:layout_height="222dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/arrondi"
+            android:ems="10"
+            android:fontFamily="@font/maax_rounded"
+            android:gravity="top|left"
+            android:hint="mentioner les traitement en cours pris ..."
+            android:inputType="textPersonName"
+            android:padding="7dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2511" />
+
+        <TextView
+            android:id="@+id/textView2611"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Photo"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.108"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ModifierDemandePatient_editText_traitement" />
+
+        <EditText
+            android:id="@+id/ModifierDemandePatient_edittext_photo"
+            android:layout_width="282dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/arrondi"
+            android:ems="10"
+            android:fontFamily="@font/maax_rounded"
+            android:gravity="center|left"
+            android:hint="joindre une photo"
+            android:inputType="textPersonName"
+            android:padding="7dp"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2611" />
+
+        <ImageButton
+            android:id="@+id/ModifierDemandePatient_imageButton_photo"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#FFFFFF"
+            android:src="@drawable/photo"
+            app:layout_constraintBottom_toBottomOf="@+id/ModifierDemandePatient_edittext_photo"
+            app:layout_constraintEnd_toEndOf="@+id/ModifierDemandePatient_edittext_photo"
+            app:layout_constraintTop_toTopOf="@+id/ModifierDemandePatient_edittext_photo" />
+
+
+        <Button
+            android:id="@+id/ModifierDemandePatient_Button_Envoyer"
+            android:layout_width="229dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/arrondi_bleu"
+            android:fontFamily="@font/maaxrounded_bold"
+            android:text="Envoyer"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ModifierDemandePatient_edittext_photo" />
+
+        <TextView
+            android:id="@+id/textView4511"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Demande"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
