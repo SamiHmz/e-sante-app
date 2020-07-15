@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/nav_fragment_doctor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EBEBEB"
@@ -16,27 +16,27 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/arrondi"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView23">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageButton
-                android:id="@+id/imageView7"
+                android:id="@+id/home_imageButton_recherche"
                 android:layout_width="26dp"
                 android:layout_height="29dp"
                 android:background="@drawable/arrondi"
                 android:src="@drawable/search"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/editText"
+                app:layout_constraintStart_toEndOf="@+id/home_edittext_recherche"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/home_edittext_recherche"
                 android:layout_width="223dp"
                 android:layout_height="39dp"
                 android:layout_marginStart="5dp"
@@ -53,73 +53,55 @@
     </androidx.cardview.widget.CardView>
 
     <ImageButton
-        android:id="@+id/imageView8"
-        android:layout_width="42dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="22dp"
-        android:background="#EBEBEB"
-        android:src="@drawable/filter"
+        android:id="@+id/home_ImageView_fillter"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/filter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toEndOf="@+id/cardView3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="357dp"
-        android:layout_height="495dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView4"
+        android:id="@+id/home_recyclerview"
+        android:layout_width="350dp"
+        android:layout_height="384dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView5" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Liste des médecin"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        app:layout_constraintVertical_bias="0.682" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView4"
-        android:layout_width="409dp"
-        android:layout_height="70dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/cardView5"
+        android:layout_width="310dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <Spinner
+            android:id="@+id/home_spinner_filtre"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageButton
-                android:id="@+id/imageView11"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/arrondi"
-                android:src="@drawable/gear"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView10"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/imageView9"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/arrondi"
-                android:src="@drawable/browser"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView10"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/imageView10"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/arrondi"
-                android:src="@drawable/heart2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/style_spinner"
+            android:visibility="visible" />
     </androidx.cardview.widget.CardView>
 
 

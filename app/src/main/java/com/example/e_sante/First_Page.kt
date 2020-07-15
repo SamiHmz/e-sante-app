@@ -19,4 +19,9 @@ class First_Page : Fragment() {
         return inflater.inflate(R.layout.fragment_first__page, container, false)
     }
 
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+    
+    }
 }

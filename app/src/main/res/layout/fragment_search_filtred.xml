@@ -12,30 +12,30 @@
         android:id="@+id/cardView20"
         android:layout_width="272dp"
         android:layout_height="35dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/arrondi"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView44">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageButton
-                android:id="@+id/imageView22"
+                android:id="@+id/SearchFiltered_imagebutton_recherche"
                 android:layout_width="29dp"
                 android:layout_height="32dp"
                 android:background="@drawable/arrondi"
                 android:src="@drawable/search"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/editText24"
+                app:layout_constraintStart_toEndOf="@+id/SearchFiltered_editText_recherche"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editText24"
+                android:id="@+id/SearchFiltered_editText_recherche"
                 android:layout_width="237dp"
                 android:layout_height="35dp"
                 android:ems="10"
@@ -54,82 +54,34 @@
         android:id="@+id/imageView23"
         android:layout_width="41dp"
         android:layout_height="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:background="#EBEBEB"
         android:src="@drawable/filter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintHorizontal_bias="0.365"
         app:layout_constraintStart_toEndOf="@+id/cardView20"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView44" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview25"
-        android:layout_width="356dp"
-        android:layout_height="492dp"
+        android:id="@+id/SearchFiltered_recyclerview"
+        android:layout_width="351dp"
+        android:layout_height="342dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView26"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView7"
-        app:layout_constraintVertical_bias="0.697" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView26"
-        android:layout_width="409dp"
-        android:layout_height="70dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageButton
-                android:id="@+id/imageView27"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/arrondi"
-                android:src="@drawable/gear"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView30"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/imageView29"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/arrondi"
-                android:src="@drawable/browser"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView30"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/imageView30"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/arrondi"
-                android:src="@drawable/heart2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toBottomOf="@+id/cardView7" />
 
     /////////
 
     <androidx.cardview.widget.CardView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="83dp"
+        android:layout_height="81dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/arrondi"
         android:padding="10dp"
@@ -309,5 +261,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.26" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Liste des médecins"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

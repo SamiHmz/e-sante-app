@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="40dp">
+        android:paddingBottom="60dp">
 
         <ImageView
             android:id="@+id/imageView3"
@@ -38,7 +38,7 @@
             app:layout_constraintVertical_bias="0.857" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/LoginSignUp_button_Sinscrire"
             android:layout_width="305sp"
             android:layout_height="50sp"
             android:layout_marginTop="144dp"
@@ -54,7 +54,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/LoginSignUp_button_SeConnecter"
             android:layout_width="305sp"
             android:layout_height="50sp"
             android:layout_marginTop="36dp"
@@ -65,7 +65,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintTop_toBottomOf="@+id/LoginSignUp_button_Sinscrire" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
