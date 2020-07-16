@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e_sante.Demande
@@ -30,8 +31,11 @@ class DemandePatient_adapter (val context: Context, var data:List<Demande>): Rec
 
 ///////////// aller vers le fragment de detail demande patient
         holder.itemView.setOnClickListener{view ->
-
-            view.findNavController().navigate(R.id.action_demande_patient_to_detail_demande_patient)
+            val bundle = bundleOf("id_demande" to data[position].id,
+                            "symptomes" to data[position].symptomes,
+                                "autre_symptomes" to  data[position].autre_symptomes,
+                                "traitement" to data[position].traitement)
+            view.findNavController().navigate(R.id.action_demande_patient_to_detail_demande_patient,bundle)
         }
 
     }

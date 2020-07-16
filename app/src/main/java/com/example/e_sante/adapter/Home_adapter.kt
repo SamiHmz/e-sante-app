@@ -37,8 +37,9 @@ class Home_adapter (val context: Context, var data:List<Doctor>): RecyclerView.A
 //////click sur le item
         holder.itemView.setOnClickListener{view ->
 ///////a faire le passer des données au fragment du consultion
-            //val bundle = bundleOf("doctor" to data[position].id)
-        view.findNavController().navigate(R.id.action_home2_to_demande_consultation)
+
+            val bundle = bundleOf("id_doctor" to data[position].id)
+        view.findNavController().navigate(R.id.action_home2_to_demande_consultation,bundle)
         }
     }
 }

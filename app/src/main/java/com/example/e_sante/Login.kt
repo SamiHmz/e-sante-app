@@ -36,7 +36,7 @@ class Login : Fragment() {
 
         login_button_SeCommencer.setOnClickListener{
            var loginentity = login_entity(login_editText_numero.text.toString(),login_edittext_MotDePass.text.toString())
-            login_medcin(loginentity)
+            login_patient(loginentity)
         }
     }
 
@@ -70,17 +70,25 @@ private fun login_medcin(login:login_entity){
 
 private fun login_patient(login:login_entity){
     val call = RetrofitService.endpoint.login_patient(login)
-    call.enqueue(object : Callback<String> {
-        override fun onFailure(call: Call<String>, t: Throwable) {
-            Toast.makeText(activity?.applicationContext,"erreur 3 ", Toast.LENGTH_SHORT).show()
+    call.enqueue(object : Callback<ResponseBody> {
+        override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+            Toast.makeText(activity?.applicationContext,"error : veuiilez verifier votre connexion puis reessayer 00", Toast.LENGTH_SHORT).show()
         }
 
-        override fun onResponse(call: Call<String>, response: Response<String>) {
+        override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
             if(response.isSuccessful){
-                Toast.makeText(activity?.applicationContext,response.toString(), Toast.LENGTH_SHORT).show()
+
+
+                var sp : SharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity?.applicationContext)
+                var edit : SharedPreferences.Editor = sp.edit()
+                edit.putString("x-auth-token",response.body()!!.string())
+                edit.apply()
+                val intent = Intent(getActivity(),Activity_patient::class.java)
+                startActivity(intent)
+
 
             }else{
-                Toast.makeText(activity?.applicationContext,"erreur 4 ", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity?.applicationContext,"${response.errorBody()?.string()}", Toast.LENGTH_SHORT).show()
 
             }
         }
