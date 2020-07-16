@@ -39,8 +39,8 @@ class Consultation_adapter (val context: Context, var data:List<Consutation_BD>)
 //////click sur le item
         holder.itemView.setOnClickListener{view ->
 ///////a faire le passer des données au fragment du consultion
-            //val bundle = bundleOf("doctor" to data[position].id)
-            view.findNavController().navigate(R.id.action_consultation_to_details_de_consultation)
+            val bundle = bundleOf("diagnostique" to data[position].diagnostic, "traitement" to data[position].traitemnet )
+            view.findNavController().navigate(R.id.action_consultation_to_details_de_consultation,bundle)
         }
 
     }
