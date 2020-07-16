@@ -1,408 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout3"
+    android:id="@+id/sign_up"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EBEBEB"
     tools:context=".Sign_up">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="40dp">
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView17"
-            android:layout_width="398dp"
-            android:layout_height="211dp"
-            android:src="@drawable/logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nom"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView17"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.13"
-            app:layout_constraintStart_toStartOf="parent" />
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:cropToPadding="false"
+                android:src="@drawable/logo"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.275"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView30"
-            android:layout_width="297dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/arrondi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11">
+            <EditText
+                android:id="@+id/Signup_editText_Nom"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/arrondi"
+                android:drawableLeft="@drawable/user"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:fontFamily="@font/maax_rounded"
+                android:hint="Entrer votre nom"
+                android:paddingLeft="20dp"
+                android:textSize="14dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.065"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                app:layout_constraintWidth_percent="0.8" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nom"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/Signup_editText_Nom"
+                app:layout_constraintTop_toBottomOf="@+id/imageView17" />
 
-                <ImageView
-                    android:id="@+id/imageView31"
-                    android:layout_width="26dp"
-                    android:layout_height="43dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/user"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/Signup_editText_prenom"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/arrondi"
+                android:drawableLeft="@drawable/user"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:fontFamily="@font/maax_rounded"
+                android:hint="Entrer votre prenom"
+                android:paddingLeft="20dp"
+                android:textSize="14dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.065"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13"
+                app:layout_constraintWidth_percent="0.8" />
 
-                <EditText
-                    android:id="@+id/Signup_editText_Nom"
-                    android:layout_width="236dp"
-                    android:layout_height="46dp"
-                    android:ems="10"
-                    android:fontFamily="@font/maax_rounded"
-                    android:hint="Entrer votre nom"
-                    android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Prenom"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/Signup_editText_prenom"
+                app:layout_constraintTop_toBottomOf="@+id/Signup_editText_Nom" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView33"
-                    android:layout_width="1dp"
-                    android:layout_height="45dp"
-                    android:background="#888AA1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/Signup_editText_Nom"
-                    app:layout_constraintStart_toEndOf="@+id/imageView31"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+            <EditText
+                android:id="@+id/Signup_editText_Numero"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/arrondi"
+                android:drawableLeft="@drawable/ic_phone_48px"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:fontFamily="@font/maax_rounded"
+                android:hint="Entrer votre numero"
+                android:inputType="phone"
+                android:paddingLeft="20dp"
+                android:textSize="14sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.065"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView15"
+                app:layout_constraintWidth_percent="0.8" />
 
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Numero"
+                app:layout_constraintStart_toStartOf="@+id/Signup_editText_Numero"
+                app:layout_constraintTop_toBottomOf="@+id/Signup_editText_prenom" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView40"
-            android:layout_width="297dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/arrondi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13">
+            <EditText
+                android:id="@+id/Signup_editText_Email"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/arrondi"
+                android:drawableLeft="@drawable/ic_email_48px"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:fontFamily="@font/maax_rounded"
+                android:hint="Entrer votre email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="20dp"
+                android:textSize="14dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.065"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView18"
+                app:layout_constraintWidth_percent="0.8" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Email"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/Signup_editText_Email"
+                app:layout_constraintTop_toBottomOf="@+id/Signup_editText_Numero" />
 
-                <ImageView
-                    android:id="@+id/imageView41"
-                    android:layout_width="26dp"
-                    android:layout_height="43dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/user"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/comune"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/arrondi"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
 
-                <EditText
-                    android:id="@+id/Signup_editText_prenom"
-                    android:layout_width="236dp"
-                    android:layout_height="46dp"
-                    android:ems="10"
-                    android:fontFamily="@font/maax_rounded"
-                    android:hint="Entrer votre prenom"
-                    android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintHeight_percent="0.065"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView99"
+                app:layout_constraintWidth_percent="0.8">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView43"
-                    android:layout_width="1dp"
-                    android:layout_height="45dp"
-                    android:background="#888AA1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/Signup_editText_prenom"
-                    app:layout_constraintStart_toEndOf="@+id/imageView41"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Prenom"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.142"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView30" />
+                    <ImageView
+                        android:id="@+id/imageView91"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/browser"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
+                    <Spinner
+                        android:id="@+id/Signup_spinner_commune"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@drawable/style_spinner"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/imageView91"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.7" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView50"
-            android:layout_width="297dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/arrondi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15">
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textView99"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Commune"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/comune"
+                app:layout_constraintTop_toBottomOf="@+id/wilaya" />
 
-                <ImageView
-                    android:id="@+id/imageView51"
-                    android:layout_width="26dp"
-                    android:layout_height="43dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_phone_48px"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/wilaya"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/arrondi"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.065"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView89"
+                app:layout_constraintWidth_percent="0.8">
 
-                <EditText
-                    android:id="@+id/Signup_editText_Numero"
-                    android:layout_width="236dp"
-                    android:layout_height="46dp"
-                    android:ems="10"
-                    android:fontFamily="@font/maax_rounded"
-                    android:hint="Entrer votre numero"
-                    android:inputType="phone"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView53"
-                    android:layout_width="1dp"
-                    android:layout_height="45dp"
-                    android:background="#888AA1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/Signup_editText_Numero"
-                    app:layout_constraintStart_toEndOf="@+id/imageView51"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+                    <ImageView
+                        android:id="@+id/imageView81"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/wilaya"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Numero"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.142"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView40" />
+                    <Spinner
+                        android:id="@+id/Signup_spiner_Wilaya"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@drawable/style_spinner"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/imageView81"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.7" />
 
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView60"
-            android:layout_width="297dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/arrondi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView18">
+            ///////////////////
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textView89"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Wilaya"
+                app:layout_constraintStart_toStartOf="@+id/wilaya"
+                app:layout_constraintTop_toBottomOf="@+id/Signup_editText_Email" />
 
-                <ImageView
-                    android:id="@+id/imageView61"
-                    android:layout_width="26dp"
-                    android:layout_height="43dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_email_48px"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <EditText
-                    android:id="@+id/Signup_editText_Email"
-                    android:layout_width="236dp"
-                    android:layout_height="46dp"
-                    android:ems="10"
-                    android:fontFamily="@font/maax_rounded"
-                    android:hint="Entrer votre email"
-                    android:inputType="textEmailAddress"
-                    android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView63"
-                    android:layout_width="1dp"
-                    android:layout_height="45dp"
-                    android:background="#888AA1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/Signup_editText_Email"
-                    app:layout_constraintStart_toEndOf="@+id/imageView61"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Email"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.132"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView50" />
+            <Button
+                android:id="@+id/Signup_button_Sinscrire"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/arrondi_bleu"
+                android:text="S'inscrire"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.065"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/comune"
+                app:layout_constraintVertical_bias="0.2"
+                app:layout_constraintWidth_percent="0.7" />
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView80"
-            android:layout_width="297dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/arrondi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView89">
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imageView81"
-                    android:layout_width="26dp"
-                    android:layout_height="43dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/wilaya"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Spinner
-                    android:id="@+id/Signup_spiner_Wilaya"
-                    android:layout_width="228dp"
-                    android:layout_height="43dp"
-                    android:background="@drawable/style_spinner"
-                    android:gravity="center"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.89"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView83"
-                    android:layout_width="1dp"
-                    android:layout_height="45dp"
-                    android:background="#888AA1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/Signup_spiner_Wilaya"
-                    app:layout_constraintStart_toEndOf="@+id/imageView81"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-
-        ///////////////////
-
-        <TextView
-            android:id="@+id/textView89"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Wilaya"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.134"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView60" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView90"
-            android:layout_width="297dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/arrondi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView99">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imageView91"
-                    android:layout_width="26dp"
-                    android:layout_height="43dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/browser"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Spinner
-                    android:id="@+id/Signup_spinner_commune"
-                    android:layout_width="225dp"
-                    android:layout_height="47dp"
-                    android:background="@drawable/style_spinner"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.9"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView93"
-                    android:layout_width="1dp"
-                    android:layout_height="45dp"
-                    android:background="#888AA1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/Signup_spinner_commune"
-                    app:layout_constraintStart_toEndOf="@+id/imageView91"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textView99"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Commune"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.151"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView80" />
-
-        <Button
-            android:id="@+id/Signup_button_Sinscrire"
-            android:layout_width="256dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/arrondi_bleu"
-            android:text="S'inscrire"
-            android:textColor="#FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView90" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

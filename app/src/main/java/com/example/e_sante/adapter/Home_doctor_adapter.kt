@@ -30,11 +30,15 @@ class Home_doctor_adapter (val context: Context, var data:List<Demande>): Recycl
 /*///////////////a faire//////////////////////
         holder.temps
         holder.date*/
-//////click sur le item
+//////click sur le item/////////
         holder.itemView.setOnClickListener{view ->
-///////passer des données au fragment du consultion
-          //  val Bundle = bundleOf("message" to data[position])
-            view.findNavController().navigate(R.id.action_home_doctor_to_demande_doctor)
+///////passer des données au fragment demande doctor
+            val Bundle = bundleOf("demande_id" to data[position].id,
+                "symptome" to data[position].symptomes,
+                "autre_symptome" to data[position].autre_symptomes,
+                "traitement" to data[position].traitement)
+
+            view.findNavController().navigate(R.id.action_home_doctor_to_demande_doctor,Bundle)
         }
 
     }

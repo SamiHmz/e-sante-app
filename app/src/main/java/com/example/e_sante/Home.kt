@@ -3,6 +3,8 @@ package com.example.e_sante
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,13 +20,12 @@ import retrofit2.Response
 class Home : Fragment() {
     var list_All_Specialite = listOf<Speciality>()
     var list_All_Specialite2 = mutableListOf<String>()
+    var list_doctor = listOf<Doctor>()
+    var list_specialite_pour_watcher = listOf<Doctor>()
 
-    private val list_doctor = mutableListOf(
-        Doctor(2,"dahamni","youcef","cardiologue","0656751443","2"),
-                Doctor(2,"dahamni","youcef","cardiologue","0656751443","2")
-    )
 
-    val list_specialite= mutableListOf("churigien","dentist")
+
+
 
 
     override fun onCreateView(
@@ -36,6 +37,8 @@ class Home : Fragment() {
 
 ///////spinner specialitz
         val t=inflater.inflate(R.layout.fragment_home, container, false)
+
+        AfficehrMedecin()
         Afficher_Specialité()
 
         return t
@@ -50,18 +53,47 @@ class Home : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
 
-        home_recyclerview.apply{
-            layoutManager = LinearLayoutManager(activity)
-            adapter = Home_adapter(context ,list_doctor)
-        }
-
 
 /////////////// filter pour afficher spinner des specialites
         home_ImageView_fillter.setOnClickListener{
             cardView5.setVisibility(View.VISIBLE)
             home_spinner_filtre.setVisibility(View.VISIBLE)
         }
-        }
+
+
+        home_edittext_recherche.addTextChangedListener(object :TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                var i =0}
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                var i =0            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                 var new_list_pour_watcher= mutableListOf<Doctor>()
+
+
+                 for (item in list_specialite_pour_watcher)
+                 {
+                    var c = "$item.nom$item.prenom"
+                        c=c.trim().toUpperCase()
+                     var d= s.toString().trim().toUpperCase()
+
+
+                        if(c.contains(d))
+                     {
+                         new_list_pour_watcher.add(item)
+                     }
+                 }
+
+                 home_recyclerview.adapter= activity?.applicationContext?.let {
+                     Home_adapter(
+                         it,new_list_pour_watcher) }
+                 home_recyclerview.layoutManager=LinearLayoutManager(activity?.applicationContext)
+
+             }
+        })
+
+    }
 
 
 
@@ -96,6 +128,16 @@ private fun Afficher_Specialité(){
                         }
 
                         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                            if(home_spinner_filtre.visibility == (View.VISIBLE))
+                            {list_specialite_pour_watcher=triParSpecialite(list_All_Specialite2[position],list_doctor)
+
+                                home_recyclerview.adapter= activity?.applicationContext?.let {
+                                    Home_adapter(
+                                        it,list_specialite_pour_watcher) }
+                                home_recyclerview.layoutManager=LinearLayoutManager(activity?.applicationContext)
+
+                            }
+
                         }
 
                     }
@@ -112,6 +154,89 @@ private fun Afficher_Specialité(){
 
     }
 
+
+private fun AfficehrMedecin() {
+
+    var sp: SharedPreferences =
+        PreferenceManager.getDefaultSharedPreferences(activity?.applicationContext)
+    var edit: SharedPreferences.Editor = sp.edit()
+    var token: String? = sp.getString("x-auth-token", "No x-auth-token")
+
+    val call = token?.let { RetrofitService.endpoint.gestAllDoctors(it) }
+    if (call != null) {
+        call.enqueue(object : Callback<List<Doctor>> {
+            override fun onFailure(call: Call<List<Doctor>>, t: Throwable) {
+                Toast.makeText(activity?.applicationContext,"erreur : verifier votre connexion puis reesayer", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<List<Doctor>>, response: Response<List<Doctor>>) {
+                    if (response.isSuccessful){
+
+                         list_doctor= response.body()!!
+                        list_specialite_pour_watcher= list_doctor
+                        home_recyclerview.adapter= activity?.applicationContext?.let {
+                            Home_adapter(
+                                it,list_doctor) }
+                        home_recyclerview.layoutManager=LinearLayoutManager(activity?.applicationContext)
+
+                       /* home_recyclerview.apply{
+                            layoutManager = LinearLayoutManager(activity)
+                            adapter = Home_adapter(context ,list_doctor)
+                        }*/
+
+
+                    }else{
+                        Toast.makeText(activity?.applicationContext,"${response.errorBody()?.string()}", Toast.LENGTH_SHORT).show()
+
+                    }
+            }
+
+        })
+
+        }
+    }
+
+private fun triParSpecialite(specialite :String, list:List<Doctor>):List<Doctor>
+{
+    val new_list = mutableListOf<Doctor>()
+    for (item in list)
+    {
+        if(item.specialite.equals(specialite))
+        {
+            new_list.add(item)
+        }
+
+    }
+    return new_list
+}
+
+
+/*
+    private val textWatcher = object : TextWatcher {
+        override fun afterTextChanged(s: Editable?) {
+        }
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        }
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+           /* var new_list_pour_watcher= mutableListOf<Doctor>()
+
+
+            for (item in list_specialite_pour_watcher)
+            {
+                if(s?.let { item.nom.contains(it) }?.or(s?.let { item.prenom.contains(it) }!!)!!){
+                    new_list_pour_watcher.add(item)
+                }
+            }
+
+            home_recyclerview.adapter= activity?.applicationContext?.let {
+                Home_adapter(
+                    it,new_list_pour_watcher) }
+            home_recyclerview.layoutManager=LinearLayoutManager(activity?.applicationContext)
+
+            */}
+        }
+*/
 }
 
 

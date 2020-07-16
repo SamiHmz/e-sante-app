@@ -21,6 +21,14 @@ class details_de_consultation : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        val traitement = arguments?.getString("traitement")
+        val diagnostique = arguments?.getString("diagnostique")
+
+        DetailConsultation_textview_diagnostique.text=diagnostique
+        DetailConsultation_textview_traitement.text=traitement
+
+//////////   button retour /////////////
         DetailConsultation_imageButton_retour.setOnClickListener{
                 getActivity()?.onBackPressed()
             }

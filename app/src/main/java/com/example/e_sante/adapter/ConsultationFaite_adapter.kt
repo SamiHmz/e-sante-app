@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e_sante.Consultation
@@ -30,13 +31,17 @@ class ConsultationFaite_adapter (val context: Context, var data:List<Consutation
 
     override fun onBindViewHolder(holder: MyConsultationFaite_adapterViewHolder, position: Int) {
         holder.nom.text = "Dr"+" "+data[position].nom +" "+data[position].prenom
-///*/*/*/*/*/*/*/*/*/*/*/     implment other parameter *
+///*/*/*/*/*/*/*/*/*/*/*/implment other parameter *
 
 
         holder.itemView.setOnClickListener{view ->
 ///////a faire le passer des données au fragment du consultion
-            //val bundle = bundleOf("doctor" to data[position].id)
-            view.findNavController().navigate(R.id.action_consultation_faite_doctor_to_detail_consultation_traite_doctor)
+            val bundle = bundleOf("consultation_id" to data[position].id,
+                                        "diagnostique" to data[position].diagnostic,
+                                        "traitement" to data[position].traitemnet)
+
+
+            view.findNavController().navigate(R.id.action_consultation_faite_doctor_to_detail_consultation_traite_doctor,bundle)
         }
 
 
