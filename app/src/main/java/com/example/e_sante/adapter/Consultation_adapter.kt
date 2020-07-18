@@ -1,3 +1,5 @@
+
+
 package com.example.e_sante.entities
 
 import android.content.Context
@@ -25,6 +27,8 @@ import java.time.ZoneOffset
 
 class Consultation_adapter (val context: Context, var data:List<Consutation_BD>): RecyclerView.Adapter<MyConsultationViewHolder>(){
 
+
+
     var sp: SharedPreferences =
         PreferenceManager.getDefaultSharedPreferences(context)
     var edit: SharedPreferences.Editor = sp.edit()
@@ -32,10 +36,7 @@ class Consultation_adapter (val context: Context, var data:List<Consutation_BD>)
 
     var token: String? = sp.getString("x-auth-token", "No x-auth-token")
     var lien : String? = sp.getString("lien","No lien")
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyConsultationViewHolder {
-
-
 
         return MyConsultationViewHolder(
             LayoutInflater.from(context).inflate(
@@ -50,22 +51,31 @@ class Consultation_adapter (val context: Context, var data:List<Consutation_BD>)
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: MyConsultationViewHolder, position: Int) {
-        holder.nom.text = "Dr"+" "+data[position].nom +" "+data[position].prenom
-/////////// a faire //////////////////////
+
         var dateInString: String? = data[position].date
         var instant : Instant = Instant.parse(dateInString)
 
-        //get date time only
-        var result : LocalDateTime  = LocalDateTime.ofInstant(instant, ZoneId.of(ZoneOffset.UTC.getId()));
+//get date time only
+        var result : LocalDateTime = LocalDateTime.ofInstant(instant, ZoneId.of(ZoneOffset.UTC.getId()));
 
-        //get localdate
+//get localdate
 
         holder.date.text = result.toLocalDate().toString()
 
-        //holder.duree.text =
+
+        holder.nom.text = "Dr"+" "+data[position].nom +" "+data[position].prenom
+/////////// a faire //////////////////////
+        // holder.date.text
+        //holder.duree.text
 //////////// a faire //////////////////////////////////////*/
         holder.point.setImageResource(R.drawable.ic_more_vert_48px)
 
+
+        if (data[position].image != null) {
+            Glide.with(context).load("$lien" +"/"+ "${data[position].image}").into(holder.photo)
+        }else{
+            holder.photo.setImageResource(R.drawable.mask_group_2)
+        }
 //////click sur le item
         holder.itemView.setOnClickListener{view ->
 ///////a faire le passer des données au fragment du consultion
@@ -73,12 +83,7 @@ class Consultation_adapter (val context: Context, var data:List<Consutation_BD>)
             view.findNavController().navigate(R.id.action_consultation_to_details_de_consultation,bundle)
         }
 
-        if (data[position].image != null) {
-            Glide.with(context).load("$lien" +"/"+ "${data[position].image}").into(holder.photo)
-        }
-
     }
-
 
 }
 
@@ -86,7 +91,27 @@ class MyConsultationViewHolder(view: View) : RecyclerView.ViewHolder(view)
 {
     val nom = view.findViewById(R.id.LayoutConsultation_textView_nom) as TextView
     val date = view.findViewById(R.id.LayoutConsultation_textView_date) as TextView
-    val duree = view.findViewById(R.id.LayoutConsultation_textView_duree) as TextView
     val photo = view.findViewById(R.id.LayoutConsultation_ImageView_photo) as ImageView
     val point = view.findViewById(R.id.imageView25) as ImageView
 }
+
+
+
+
+
+
+
+/*
+
+var dateInString: String? = data[position].date
+var instant : Instant = Instant.parse(dateInString)
+
+//get date time only
+var result : LocalDateTime  = LocalDateTime.ofInstant(instant, ZoneId.of(ZoneOffset.UTC.getId()));
+
+//get localdate
+
+holder.date.text = result.toLocalDate().toString()
+
+
+ */

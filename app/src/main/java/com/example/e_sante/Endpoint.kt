@@ -21,7 +21,7 @@ interface Endpoint {
     //@Multipart
     @GET ("api/v1/demande")
     fun getAlldemande(@Header("x-auth-token") xauthtoken:String): Call<List<Demande>>
-//, @Part image: MultipartBody
+//
 
 
     @GET ("api/v1/consultation")
@@ -51,6 +51,9 @@ interface Endpoint {
     @POST("api/v1/consultation")
     fun ajouter_consultation(@Body consultation:Consultation_a_creer, @Header("x-auth-token") xauthtoken:String):Call<Consutation_BD>
 
+
+    //@Multipart
+    //, @Part image: MultipartBody.Part
     @POST("api/v1/demande")
     fun ajouter_demande(@Body demande:Demande_a_creer, @Header("x-auth-token") xauthtoken:String):Call<Demande>
 

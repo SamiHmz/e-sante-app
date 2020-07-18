@@ -2,18 +2,24 @@ package com.example.e_sante.adapter
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Build
 import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.e_sante.Demande
 import com.example.e_sante.R
+import java.time.Instant
+import java.time.LocalDateTime
+import java.time.ZoneId
+import java.time.ZoneOffset
 
 class DemandePatient_adapter (val context: Context, var data:List<Demande>): RecyclerView.Adapter<MyDemandePatientViewHolder>() {
 
@@ -36,13 +42,31 @@ class DemandePatient_adapter (val context: Context, var data:List<Demande>): Rec
 
     override fun getItemCount()= data.size
 
-    override fun onBindViewHolder(holder: MyDemandePatientViewHolder, position: Int) {
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onBindViewHolder(holder: MyDemandePatientViewHolder, position: Int)
+
+
+    {
+
+
+        var dateInString: String? = data[position].createdAt
+        var instant : Instant = Instant.parse(dateInString)
+
+//get date time only
+        var result : LocalDateTime = LocalDateTime.ofInstant(instant, ZoneId.of(ZoneOffset.UTC.getId()));
+
+//get localdate
+
+        holder.date.text = result.toLocalDate().toString()
+
         holder.name.text = data[position].nom +" "+data[position].prenom
 //*/*/*/*/*/*/*/*//////////////  require implementation of other  //////////////////////////////////////////
 
 
         if (data[position].image != null) {
             Glide.with(context).load("$lien" +"/"+ "${data[position].image}").into(holder.image)
+        }else {
+            holder.image.setImageResource(R.drawable.groupe_3)
         }
 ///////////// aller vers le fragment de detail demande patient
         holder.itemView.setOnClickListener{view ->
@@ -58,7 +82,6 @@ class DemandePatient_adapter (val context: Context, var data:List<Demande>): Rec
 }
 class MyDemandePatientViewHolder(view: View): RecyclerView.ViewHolder(view){
     val name = view.findViewById(R.id.LayoutHomeDoctor_textview_nom) as TextView
-    val temps = view.findViewById(R.id.LayoutHomeDoctor_textview_temps) as TextView
     val date = view.findViewById(R.id.LayoutHomeDoctor_textview_date) as TextView
     val image = view.findViewById(R.id.imageView9) as ImageView
 }
