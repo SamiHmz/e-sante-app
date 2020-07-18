@@ -36,7 +36,7 @@ class Login : Fragment() {
 
         login_button_SeCommencer.setOnClickListener{
            var loginentity = login_entity(login_editText_numero.text.toString(),login_edittext_MotDePass.text.toString())
-            login_patient(loginentity)
+            login_medcin(loginentity)
         }
     }
 
@@ -45,7 +45,7 @@ private fun login_medcin(login:login_entity){
     val call = RetrofitService.endpoint.login_doctor(login)
     call.enqueue(object : Callback<ResponseBody> {
         override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-            Toast.makeText(activity?.applicationContext,"error : veuiilez verifier votre connexion puis reessayer 00", Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity?.applicationContext,"error : veuiilez verifier votre connexion puis reessayer", Toast.LENGTH_SHORT).show()
         }
 
         override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {

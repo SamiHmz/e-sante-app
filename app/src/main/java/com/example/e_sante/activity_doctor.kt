@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_doctor.*
 
 class activity_doctor : AppCompatActivity() {
 
@@ -21,10 +22,12 @@ class activity_doctor : AppCompatActivity() {
 
 
 
+
 //les buttons du bottom nav bar
         val bottonnavigation : BottomNavigationView = findViewById(R.id.bottom_navigationview_doctor)
         val navcontroller1 = findNavController(R.id.nav_fragment_doctor)
         bottonnavigation.setupWithNavController(navcontroller1)
 
     }
+
 }

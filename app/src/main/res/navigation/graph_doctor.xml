@@ -32,7 +32,11 @@
         android:id="@+id/traitement_doctor"
         android:name="com.example.e_sante.traitement_doctor"
         android:label="fragment_traitement_doctor"
-        tools:layout="@layout/fragment_traitement_doctor" />
+        tools:layout="@layout/fragment_traitement_doctor" >
+        <action
+            android:id="@+id/action_traitement_doctor_to_home_doctor"
+            app:destination="@id/home_doctor" />
+    </fragment>
     <fragment
         android:id="@+id/consultation_faite_doctor"
         android:name="com.example.e_sante.consultation_faite_doctor"
@@ -48,12 +52,30 @@
         android:label="fragment_detail_consultation_traite_doctor"
         tools:layout="@layout/fragment_detail_consultation_traite_doctor" >
         <action
-            android:id="@+id/action_detail_consultation_traite_doctor_to_modifier_consultation_fait_doctor"
-            app:destination="@id/modifier_consultation_fait_doctor" />
+            android:id="@+id/action_detail_consultation_traite_doctor_to_detail_demande_doctor2"
+            app:destination="@id/detail_demande_doctor2" />
     </fragment>
     <fragment
         android:id="@+id/modifier_consultation_fait_doctor"
         android:name="com.example.e_sante.Modifier_consultation_fait_doctor"
         android:label="fragment_modifier_consultation_fait_doctor"
-        tools:layout="@layout/fragment_modifier_consultation_fait_doctor" />
+        tools:layout="@layout/fragment_modifier_consultation_fait_doctor" >
+        <action
+            android:id="@+id/action_modifier_consultation_fait_doctor_to_consultation_faite_doctor"
+            app:destination="@id/consultation_faite_doctor" />
+    </fragment>
+    <fragment
+        android:id="@+id/detail_demande_doctor2"
+        android:name="com.example.e_sante.Detail_demande_doctor"
+        android:label="fragment_detail_demande_doctor"
+        tools:layout="@layout/fragment_detail_demande_doctor" >
+        <action
+            android:id="@+id/action_detail_demande_doctor2_to_modifier_consultation_fait_doctor"
+            app:destination="@id/modifier_consultation_fait_doctor" />
+    </fragment>
+    <fragment
+        android:id="@+id/deconexion"
+        android:name="com.example.e_sante.Deconexion"
+        android:label="fragment_deconexion"
+        tools:layout="@layout/fragment_deconexion" />
 </navigation>

@@ -4,6 +4,10 @@
     <color name="colorPrimaryDark">#0E89B3</color>
     <color name="colorAccent">#0E89B3</color>
     <color name="bleuciel">#2BC3F5</color>
+    <color name="blanc">#ffffff</color>
+    <color name="gris">#888AA1</color>
+
+
 
 
 </resources>

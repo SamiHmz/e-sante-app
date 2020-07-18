@@ -18,7 +18,11 @@
         android:id="@+id/demande_consultation"
         android:name="com.example.e_sante.demande_consultation"
         android:label="fragment_demande_consultation"
-        tools:layout="@layout/fragment_demande_consultation" />
+        tools:layout="@layout/fragment_demande_consultation" >
+        <action
+            android:id="@+id/action_demande_consultation_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
     <fragment
         android:id="@+id/consultation"
         android:name="com.example.e_sante.Consultation"
@@ -55,5 +59,14 @@
         android:id="@+id/modifier_demande_patient"
         android:name="com.example.e_sante.modifier_demande_patient"
         android:label="fragment_modifier_demande_patient"
-        tools:layout="@layout/fragment_modifier_demande_patient" />
+        tools:layout="@layout/fragment_modifier_demande_patient" >
+        <action
+            android:id="@+id/action_modifier_demande_patient_to_demande_patient"
+            app:destination="@id/demande_patient" />
+    </fragment>
+    <fragment
+        android:id="@+id/deconexion2"
+        android:name="com.example.e_sante.Deconexion"
+        android:label="fragment_deconexion"
+        tools:layout="@layout/fragment_deconexion" />
 </navigation>

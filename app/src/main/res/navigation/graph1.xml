@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_landing_page" >
         <action
             android:id="@+id/action_landing_page_to_login_signup"
-            app:destination="@id/login_signup" />
+            app:destination="@id/choix_medecin_patient" />
     </fragment>
     <fragment
         android:id="@+id/login_signup"
@@ -38,6 +38,18 @@
         tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/action_sign_up_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/choix_medecin_patient"
+        android:name="com.example.e_sante.Choix_medecin_patient"
+        android:label="fragment_choix_medecin_patient"
+        tools:layout="@layout/fragment_choix_medecin_patient" >
+        <action
+            android:id="@+id/action_choix_medecin_patient_to_login_signup"
+            app:destination="@id/login_signup" />
+        <action
+            android:id="@+id/action_choix_medecin_patient_to_login"
             app:destination="@id/login" />
     </fragment>
 </navigation>

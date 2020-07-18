@@ -46,14 +46,18 @@ private fun AfficherConsultation()
     if (call != null) {
         call.enqueue(object : Callback<List<Consutation_BD>> {
             override fun onFailure(call: Call<List<Consutation_BD>>, t: Throwable) {
+                spin_kit2.visibility=View.INVISIBLE
+
                 Toast.makeText(activity?.applicationContext,"erreur : verifier votre connexion puis reesayer", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(
+
                 call: Call<List<Consutation_BD>>,
                 response: Response<List<Consutation_BD>>
-            ) {
-            if(response.isSuccessful){
+            ) {                spin_kit2.visibility=View.INVISIBLE
+
+                if(response.isSuccessful){
 
                 val list= response.body()!!
                 consultation_recyclerView.adapter= activity?.applicationContext?.let {

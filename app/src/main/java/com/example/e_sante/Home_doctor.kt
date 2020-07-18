@@ -52,10 +52,14 @@ private fun AfficherDemandes(){
     if (call != null) {
         call.enqueue(object : Callback<List<Demande>> {
             override fun onFailure(call: Call<List<Demande>>, t: Throwable) {
+                spin_kit10.visibility=View.INVISIBLE
+
                 Toast.makeText(activity?.applicationContext,"erreur : verifier votre connexion puis reesayer", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<List<Demande>>, response: Response<List<Demande>>) {
+                spin_kit10.visibility=View.INVISIBLE
+
                 if(response.isSuccessful){
 
                     val list= response.body()!!

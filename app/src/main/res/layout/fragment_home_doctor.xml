@@ -33,4 +33,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView203" />
 
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spin_kit10"
+        style="@style/SpinKitView.Large.Wave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/HomeDoctor_recyclerview"
+        app:layout_constraintEnd_toEndOf="@+id/HomeDoctor_recyclerview"
+        app:layout_constraintStart_toStartOf="@+id/HomeDoctor_recyclerview"
+        app:layout_constraintTop_toTopOf="@+id/HomeDoctor_recyclerview" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

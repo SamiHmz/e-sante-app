@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout10"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBEBEB"
+    tools:context=".Detail_demande_doctor" >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="30dp">
+
+<TextView
+
+    android:id="@+id/textView320000"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    android:text="Demande"
+    android:textSize="20dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<ImageButton
+    android:id="@+id/DetailDemandeDoctor_imageButton_retour"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="30dp"
+    android:background="#EBEBEB"
+    android:src="@drawable/ic_arrow_back"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/textView330000"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="30dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="68dp"
+    android:text="Symptomes "
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/DetailDemandeDoctor_imageButton_retour" />
+
+<TextView
+    android:id="@+id/DetailDemandeDoctor_textview_symptomes"
+    android:layout_width="302dp"
+    android:layout_height="40dp"
+    android:layout_marginTop="15dp"
+    android:fontFamily="@font/maax_rounded"
+    android:text="TextView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView330000" />
+
+<TextView
+    android:id="@+id/textView350000"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="30dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="30dp"
+    android:text="Autre Symtomes "
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/DetailDemandeDoctor_textview_symptomes" />
+
+<TextView
+    android:id="@+id/DetailDemandeDoctor_textview_AutreSymptomes"
+    android:layout_width="295dp"
+    android:layout_height="57dp"
+    android:layout_marginTop="15dp"
+    android:fontFamily="@font/maax_rounded"
+    android:text="TextView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView350000" />
+
+<TextView
+    android:id="@+id/textView370000"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="30dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="30dp"
+    android:text="Traitement"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/DetailDemandeDoctor_textview_AutreSymptomes" />
+
+    <TextView
+        android:id="@+id/DetailDemandeDoctor_textview_traitement"
+        android:layout_width="291dp"
+        android:layout_height="70dp"
+        android:fontFamily="@font/maax_rounded"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView370000" />
+
+<TextView
+    android:id="@+id/textView390000"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="30dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="30dp"
+    android:text="Photo"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/DetailDemandeDoctor_textview_traitement" />
+
+<ImageView
+    android:id="@+id/DetailDemandeDoctor_ImageView_photo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:src="@drawable/image"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView390000" />
+
+    <Button
+        android:id="@+id/DetailDemandeDoctor_button_traité"
+        android:layout_width="244dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/arrondi_bleu"
+        android:text="revoir"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DetailDemandeDoctor_ImageView_photo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

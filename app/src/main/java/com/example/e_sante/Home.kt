@@ -37,7 +37,7 @@ class Home : Fragment() {
 
 ///////spinner specialitz
         val t=inflater.inflate(R.layout.fragment_home, container, false)
-
+        //spin_kit8.visibility=View.VISIBLE
         AfficehrMedecin()
         Afficher_Specialité()
 
@@ -74,7 +74,7 @@ class Home : Fragment() {
 
                  for (item in list_specialite_pour_watcher)
                  {
-                    var c = "$item.nom$item.prenom"
+                    var c = "$item.nom"+" "+"$item.prenom"
                         c=c.trim().toUpperCase()
                      var d= s.toString().trim().toUpperCase()
 
@@ -101,17 +101,23 @@ private fun Afficher_Specialité(){
     var sp : SharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity?.applicationContext)
     var edit : SharedPreferences.Editor = sp.edit()
     var token : String? = sp.getString("x-auth-token","No x-auth-token")
+    var lien : String? = sp.getString("lien","No lien")
+
     val call = token?.let { RetrofitService.endpoint.getAllSpecialite(it) }
 
     if (call != null) {
         call.enqueue(object : Callback<List<Speciality>> {
 
             override fun onFailure(call: Call<List<Speciality>>, t: Throwable) {
+                spin_kit8.visibility=View.INVISIBLE
+
                 Toast.makeText(activity?.applicationContext,"erreur : verifier votre connexion puis reesayer", Toast.LENGTH_SHORT).show()
 
             }
 
             override fun onResponse(call: Call<List<Speciality>>, response: Response<List<Speciality>>) {
+                spin_kit8.visibility=View.INVISIBLE
+
                 if(response.isSuccessful){
                     list_All_Specialite= response.body()!!
                     list_All_Specialite2 = mutableListOf<String>()
@@ -161,6 +167,9 @@ private fun AfficehrMedecin() {
         PreferenceManager.getDefaultSharedPreferences(activity?.applicationContext)
     var edit: SharedPreferences.Editor = sp.edit()
     var token: String? = sp.getString("x-auth-token", "No x-auth-token")
+    var lien : String? = sp.getString("lien","No lien")
+
+
 
     val call = token?.let { RetrofitService.endpoint.gestAllDoctors(it) }
     if (call != null) {
@@ -174,6 +183,8 @@ private fun AfficehrMedecin() {
 
                          list_doctor= response.body()!!
                         list_specialite_pour_watcher= list_doctor
+
+
                         home_recyclerview.adapter= activity?.applicationContext?.let {
                             Home_adapter(
                                 it,list_doctor) }

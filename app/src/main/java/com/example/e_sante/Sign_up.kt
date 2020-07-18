@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.navigation.findNavController
 import com.example.e_sante.entities.User_retour
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 import retrofit2.Call
@@ -142,6 +143,9 @@ private fun addUser(user1:User){
                 Toast.makeText(activity?.applicationContext,"Utilisateur ajouter avec succes", Toast.LENGTH_SHORT).show()
 
 
+
+                requireActivity().findNavController(R.id.nav_fragment)
+                    .navigate(R.id.action_sign_up_to_login)
             }
             else
             {

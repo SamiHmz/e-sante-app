@@ -13,7 +13,7 @@
         android:icon="@drawable/heart2"
         tools:ignore="MenuTitle" />
 
-    <item android:id="@+id/gear"
+    <item android:id="@+id/deconexion"
         android:icon="@drawable/gear"
         tools:ignore="MenuTitle" />
 

@@ -1,21 +1,31 @@
 package com.example.e_sante
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 
 class Home_adapter (val context: Context, var data:List<Doctor>): RecyclerView.Adapter<MyHomeViewHolder>(){
 
+    var sp: SharedPreferences =
+        PreferenceManager.getDefaultSharedPreferences(context)
+    var edit: SharedPreferences.Editor = sp.edit()
 
+
+    var token: String? = sp.getString("x-auth-token", "No x-auth-token")
+    var lien : String? = sp.getString("lien","No lien")
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHomeViewHolder {
             return MyHomeViewHolder(
@@ -33,6 +43,9 @@ class Home_adapter (val context: Context, var data:List<Doctor>): RecyclerView.A
         holder.specialite.text = data[position].specialite
         holder.numero.text = data[position].numero
 
+        if (data[position].photo != null) {
+            Glide.with(context).load("$lien" +"/"+ "${data[position].photo}").into(holder.image)
+        }
 
 //////click sur le item
         holder.itemView.setOnClickListener{view ->
@@ -50,4 +63,5 @@ class Home_adapter (val context: Context, var data:List<Doctor>): RecyclerView.A
     val name = view.findViewById(R.id.LayoutHome_textview_nom) as TextView
     val specialite = view.findViewById(R.id.LayoutHome_textview_Specialité) as TextView
     val numero =  view.findViewById(R.id.LayoutHome_textview_numero) as TextView
+     val image = view.findViewById(R.id.imageView5) as ImageView
 }
