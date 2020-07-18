@@ -47,16 +47,16 @@ class Home_doctor_adapter (val context: Context, var data:List<Demande>): Recycl
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: MyHomeDoctorViewHolder, position: Int) {
-
+/*
         var dateInString: String? = data[position].createdAt
         var instant : Instant = Instant.parse(dateInString)
 
 //get date time only
         var result : LocalDateTime = LocalDateTime.ofInstant(instant, ZoneId.of(ZoneOffset.UTC.getId()));
 
-//get localdate
+//get localdate*/
 
-        holder.date.text = result.toLocalDate().toString()
+        holder.date.text = data[position].createdAt
 
         holder.name.text = data[position].nom +" "+data[position].prenom
 

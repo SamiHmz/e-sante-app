@@ -49,15 +49,9 @@ class DemandePatient_adapter (val context: Context, var data:List<Demande>): Rec
     {
 
 
-        var dateInString: String? = data[position].createdAt
-        var instant : Instant = Instant.parse(dateInString)
 
-//get date time only
-        var result : LocalDateTime = LocalDateTime.ofInstant(instant, ZoneId.of(ZoneOffset.UTC.getId()));
 
-//get localdate
-
-        holder.date.text = result.toLocalDate().toString()
+        holder.date.text = data[position].createdAt
 
         holder.name.text = data[position].nom +" "+data[position].prenom
 //*/*/*/*/*/*/*/*//////////////  require implementation of other  //////////////////////////////////////////

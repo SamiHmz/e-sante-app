@@ -52,19 +52,12 @@ class ConsultationFaite_adapter (val context: Context, var data:List<Consutation
     override fun onBindViewHolder(holder: MyConsultationFaite_adapterViewHolder, position: Int) {
 
 
-        var dateInString: String? = data[position].date
-        var instant : Instant = Instant.parse(dateInString)
 
-//get date time only
-        var result : LocalDateTime  = LocalDateTime.ofInstant(instant, ZoneId.of(ZoneOffset.UTC.getId()));
+        holder.date.text = data[position].date
 
-//get localdate
-
-        holder.date.text = result.toLocalDate().toString()
-
-        holder.nom.text = "Dr"+" "+data[position].nom +" "+data[position].prenom
+        holder.nom.text = data[position].nom +" "+data[position].prenom
 ///*/*/*/*/*/*/*/*/*/*/*/implment other parameter *
-
+        holder.message.visibility=View.GONE
 
         holder.itemView.setOnClickListener{view ->
 ///////a faire le passer des données au fragment du consultion
@@ -91,5 +84,7 @@ class MyConsultationFaite_adapterViewHolder(view: View) : RecyclerView.ViewHolde
     val nom = view.findViewById(R.id.LayoutConsultation_textView_nom) as TextView
     val date = view.findViewById(R.id.LayoutConsultation_textView_date) as TextView
     val photo = view.findViewById(R.id.LayoutConsultation_ImageView_photo) as ImageView
+
+    val message = view.findViewById(R.id.textView112) as TextView
 
 }
