@@ -9,10 +9,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitService {
     lateinit var context :Context
 
-
+var lien = "http://62eb2ad602de.ngrok.io"
 
     val endpoint: Endpoint by lazy {
-        Retrofit.Builder().baseUrl("http://afd51050ee2a.ngrok.io").
+        Retrofit.Builder().baseUrl(lien).
         addConverterFactory(GsonConverterFactory.create()).
         build().create(Endpoint::class.java)
     }

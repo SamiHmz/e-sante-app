@@ -40,9 +40,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:SpinKit_Color="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/HomeDoctor_recyclerview"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/HomeDoctor_recyclerview"
         app:layout_constraintStart_toStartOf="@+id/HomeDoctor_recyclerview"
-        app:layout_constraintTop_toTopOf="@+id/HomeDoctor_recyclerview" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

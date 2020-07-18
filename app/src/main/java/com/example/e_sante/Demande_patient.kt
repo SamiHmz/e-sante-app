@@ -3,17 +3,21 @@ package com.example.e_sante
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e_sante.adapter.DemandePatient_adapter
 import kotlinx.android.synthetic.main.fragment_demande_patient.*
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class Demande_patient : Fragment() {
 
@@ -41,6 +45,7 @@ class Demande_patient : Fragment() {
         val call = token?.let { RetrofitService.endpoint.getAlldemande(it) }
         if (call != null) {
             call.enqueue(object : Callback<List<Demande>> {
+
                 override fun onFailure(call: Call<List<Demande>>, t: Throwable) {
                     spin_kit5.visibility=View.INVISIBLE
 

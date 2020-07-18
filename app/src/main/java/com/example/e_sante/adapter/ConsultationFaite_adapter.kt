@@ -71,4 +71,5 @@ class MyConsultationFaite_adapterViewHolder(view: View) : RecyclerView.ViewHolde
     val date = view.findViewById(R.id.LayoutConsultation_textView_date) as TextView
     val duree = view.findViewById(R.id.LayoutConsultation_textView_duree) as TextView
     val photo = view.findViewById(R.id.LayoutConsultation_ImageView_photo) as ImageView
+
 }

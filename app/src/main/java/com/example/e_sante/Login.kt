@@ -32,11 +32,16 @@ class Login : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
+        var sp : SharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity?.applicationContext)
+        var edit : SharedPreferences.Editor = sp.edit()
+        var type : String? = sp.getString("type","No type")
 
         login_button_SeCommencer.setOnClickListener{
+
            var loginentity = login_entity(login_editText_numero.text.toString(),login_edittext_MotDePass.text.toString())
-            login_medcin(loginentity)
+            if(type =="docteur" ){login_medcin(loginentity)}
+                if (type =="patient"){login_patient((loginentity))}
+
         }
     }
 
