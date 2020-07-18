@@ -28,7 +28,7 @@
         android:layout_height="73dp"
         android:fontFamily="@font/maaxrounded_bold"
         android:gravity="center"
-        android:text="veullez choisir le type votre profil"
+        android:text="choisir votre profil"
         android:textColor="#888AA1"
         android:textSize="20sp"
         android:textStyle="bold"

@@ -52,15 +52,8 @@ class Consultation_adapter (val context: Context, var data:List<Consutation_BD>)
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: MyConsultationViewHolder, position: Int) {
 
-        var dateInString: String? = data[position].date
-        var instant : Instant = Instant.parse(dateInString)
 
-//get date time only
-        var result : LocalDateTime = LocalDateTime.ofInstant(instant, ZoneId.of(ZoneOffset.UTC.getId()));
-
-//get localdate
-
-        holder.date.text = result.toLocalDate().toString()
+        holder.date.text = data[position].date
 
 
         holder.nom.text = "Dr"+" "+data[position].nom +" "+data[position].prenom

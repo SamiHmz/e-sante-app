@@ -28,8 +28,10 @@ class Home_doctor : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val t=inflater.inflate(R.layout.fragment_home_doctor, container, false)
+
         AfficherDemandes()
-        return inflater.inflate(R.layout.fragment_home_doctor, container, false)
+        return t
     }
 
 
