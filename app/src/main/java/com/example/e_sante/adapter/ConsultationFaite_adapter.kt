@@ -1,6 +1,8 @@
 package com.example.e_sante.adapter
 
 import android.content.Context
+import android.content.SharedPreferences
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,11 +11,22 @@ import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.e_sante.Consultation
 import com.example.e_sante.Consutation_BD
 import com.example.e_sante.R
 
 class ConsultationFaite_adapter (val context: Context, var data:List<Consutation_BD>): RecyclerView.Adapter<MyConsultationFaite_adapterViewHolder>() {
+
+    var sp: SharedPreferences =
+        PreferenceManager.getDefaultSharedPreferences(context)
+    var edit: SharedPreferences.Editor = sp.edit()
+
+
+    var token: String? = sp.getString("x-auth-token", "No x-auth-token")
+    var lien : String? = sp.getString("lien","No lien")
+
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -44,7 +57,9 @@ class ConsultationFaite_adapter (val context: Context, var data:List<Consutation
             view.findNavController().navigate(R.id.action_consultation_faite_doctor_to_detail_consultation_traite_doctor,bundle)
         }
 
-
+        if (data[position].image != null) {
+            Glide.with(context).load("$lien" +"/"+ "${data[position].image}").into(holder.photo)
+        }
 
     }
 }

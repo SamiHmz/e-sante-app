@@ -30,4 +30,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spin_kit2"
+        style="@style/SpinKitView.Large.Wave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/consultation_recyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/consultation_recyclerView"
+        app:layout_constraintStart_toStartOf="@+id/consultation_recyclerView"
+        app:layout_constraintTop_toTopOf="@+id/consultation_recyclerView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

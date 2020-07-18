@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.findNavController
 import com.example.e_sante.entities.Consultation_a_creer
 import kotlinx.android.synthetic.main.fragment_traitement_doctor.*
 import retrofit2.Call
@@ -67,6 +68,8 @@ private fun Envoyerconsultatiom(demande_id:Int)
 
                 Toast.makeText(activity?.applicationContext,"Consultation ajouté avec succes", Toast.LENGTH_SHORT).show()
 
+                requireActivity().findNavController(R.id.nav_fragment_doctor)
+                    .navigate(R.id.action_traitement_doctor_to_home_doctor)
 
             }else{
                 Toast.makeText(activity?.applicationContext,"${response.errorBody()?.string()}", Toast.LENGTH_SHORT).show()

@@ -14,7 +14,7 @@
         android:icon="@drawable/heart2"
         tools:ignore="MenuTitle" />
 
-    <item android:id="@+id/gear_patient"
+    <item android:id="@+id/deconexion2"
         android:icon="@drawable/gear"
         tools:ignore="MenuTitle" />
 

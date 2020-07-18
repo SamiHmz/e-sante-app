@@ -16,7 +16,9 @@ class Consutation_BD (
 
     val createdAt:String?,
     val updatedAt:String?,
-    val demande_id:Int?
+    val demande_id:Int?,
+
+    val image:String?
 
 
 

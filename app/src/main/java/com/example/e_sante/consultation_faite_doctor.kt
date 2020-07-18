@@ -23,7 +23,6 @@ class consultation_faite_doctor : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         AfficherConsultation()
         return inflater.inflate(R.layout.fragment_consultation_faite_doctor, container, false)
     }
@@ -40,6 +39,8 @@ class consultation_faite_doctor : Fragment() {
     if (call != null) {
         call.enqueue(object : Callback<List<Consutation_BD>> {
             override fun onFailure(call: Call<List<Consutation_BD>>, t: Throwable) {
+                spin_kit4.visibility=View.INVISIBLE
+
                 Toast.makeText(activity?.applicationContext,"erreur : verifier votre connexion puis reesayer", Toast.LENGTH_SHORT).show()
             }
 
@@ -47,6 +48,8 @@ class consultation_faite_doctor : Fragment() {
                 call: Call<List<Consutation_BD>>,
                 response: Response<List<Consutation_BD>>
             ) {
+                spin_kit4.visibility=View.INVISIBLE
+
                 if(response.isSuccessful){
 
                     val list= response.body()!!
