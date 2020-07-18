@@ -37,9 +37,13 @@ class demande_consultation : Fragment() {
 
 
 
+/*
+        demandeconsultation_imageButton_photo.setOnClickListener {
+            requireActivity().findNavController(R.id.nav_fragment_patient)
+                .navigate(R.id.action_demande_consultation_to_choix_photo)
 
-
-
+        }
+*/
 
 
 

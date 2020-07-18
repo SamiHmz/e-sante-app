@@ -37,9 +37,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:SpinKit_Color="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/consultation_recyclerView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/consultation_recyclerView"
         app:layout_constraintStart_toStartOf="@+id/consultation_recyclerView"
-        app:layout_constraintTop_toTopOf="@+id/consultation_recyclerView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,12 +18,11 @@ interface Endpoint {
     @GET("api/v1/specialite")
     fun getAllSpecialite(@Header("x-auth-token") xauthtoken:String) :Call<List<Speciality>>
 
-   // @Multipart
+    //@Multipart
     @GET ("api/v1/demande")
-    fun getAlldemande(@Header("x-auth-token") xauthtoken:String ): Call<List<Demande>>
+    fun getAlldemande(@Header("x-auth-token") xauthtoken:String): Call<List<Demande>>
+//, @Part image: MultipartBody
 
-
-    //, @Part image : MultipartBody.Part
 
     @GET ("api/v1/consultation")
     fun getAllconsultation(@Header("x-auth-token") xauthtoken:String): Call<List<Consutation_BD>>
