@@ -16,7 +16,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         var sp : SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         var edit : SharedPreferences.Editor = sp.edit()
-        val lien ="http://62eb2ad602de.ngrok.io"
+        val lien ="http://5322d00172b5.ngrok.io"
         edit.putString("lien",lien)
         edit.apply()
 
@@ -31,7 +31,7 @@ class SplashScreenActivity : AppCompatActivity() {
                     var token: String? = sp.getString("x-auth-token", "No x-auth-token")
                     var type : String? = sp.getString("type","No type")
 
-                    Thread.sleep(1000)
+                    Thread.sleep(3000)
 
                   if(token !="No x-auth-token"){
                     if(type =="docteur" ){

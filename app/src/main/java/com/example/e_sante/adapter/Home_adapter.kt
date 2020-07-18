@@ -45,6 +45,9 @@ class Home_adapter (val context: Context, var data:List<Doctor>): RecyclerView.A
 
         if (data[position].photo != null) {
             Glide.with(context).load("$lien" +"/"+ "${data[position].photo}").into(holder.image)
+        }else{
+            holder.image.setImageResource(R.drawable.mask_group_2)
+
         }
 
 //////click sur le item

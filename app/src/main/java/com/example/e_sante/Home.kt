@@ -56,8 +56,19 @@ class Home : Fragment() {
 
 /////////////// filter pour afficher spinner des specialites
         home_ImageView_fillter.setOnClickListener{
+
+            if(home_spinner_filtre.visibility == (View.VISIBLE)){
+                cardView5.setVisibility(View.GONE)
+                home_spinner_filtre.setVisibility(View.GONE)
+
+                home_recyclerview.adapter= activity?.applicationContext?.let {
+                    Home_adapter(
+                        it,list_doctor) }
+                home_recyclerview.layoutManager=LinearLayoutManager(activity?.applicationContext)
+            }
+                else{
             cardView5.setVisibility(View.VISIBLE)
-            home_spinner_filtre.setVisibility(View.VISIBLE)
+            home_spinner_filtre.setVisibility(View.VISIBLE)}
         }
 
 

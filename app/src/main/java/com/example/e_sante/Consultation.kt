@@ -24,7 +24,7 @@ class Consultation : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        AfficherConsultation()
+        AfficherConsultation1()
         return inflater.inflate(R.layout.fragment_consultation, container, false)
     }
 
@@ -35,43 +35,56 @@ class Consultation : Fragment() {
     }
 
 
-private fun AfficherConsultation()
-{
-    var sp : SharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity?.applicationContext)
-    var edit : SharedPreferences.Editor = sp.edit()
-    var token : String? = sp.getString("x-auth-token","No x-auth-token")
+    private fun AfficherConsultation1() {
+
+        var sp: SharedPreferences =
+            PreferenceManager.getDefaultSharedPreferences(activity?.applicationContext)
+        var edit: SharedPreferences.Editor = sp.edit()
+        var token: String? = sp.getString("x-auth-token", "No x-auth-token")
 
 
-    val call= token?.let { RetrofitService.endpoint.getAllconsultation(it) }
-    if (call != null) {
-        call.enqueue(object : Callback<List<Consutation_BD>> {
-            override fun onFailure(call: Call<List<Consutation_BD>>, t: Throwable) {
-                spin_kit2.visibility=View.INVISIBLE
+        val call = token?.let { RetrofitService.endpoint.getAllconsultation(it) }
+        if (call != null) {
+            call.enqueue(object : Callback<List<Consutation_BD>> {
+                override fun onFailure(call: Call<List<Consutation_BD>>, t: Throwable) {
+                    spin_kit2.visibility = View.INVISIBLE
 
-                Toast.makeText(activity?.applicationContext,"erreur : verifier votre connexion puis reesayer", Toast.LENGTH_SHORT).show()
-            }
+                    Toast.makeText(
+                        activity?.applicationContext,
+                        "erreur : verifier votre connexion puis reesayer",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
 
-            override fun onResponse(
+                override fun onResponse(
+                    call: Call<List<Consutation_BD>>,
+                    response: Response<List<Consutation_BD>>
+                ) {
+                    spin_kit2.visibility = View.INVISIBLE
 
-                call: Call<List<Consutation_BD>>,
-                response: Response<List<Consutation_BD>>
-            ) {                spin_kit2.visibility=View.INVISIBLE
+                    if (response.isSuccessful) {
 
-                if(response.isSuccessful){
+                        val list = response.body()!!
+                        consultation_recyclerView.adapter = activity?.applicationContext?.let {
+                            Consultation_adapter(
+                                it, list
+                            )
+                        }
+                        consultation_recyclerView.layoutManager =
+                            LinearLayoutManager(activity?.applicationContext)
 
-                val list= response.body()!!
-                consultation_recyclerView.adapter= activity?.applicationContext?.let {
-                    Consultation_adapter(
-                        it,list) }
-                consultation_recyclerView.layoutManager=LinearLayoutManager(activity?.applicationContext)
+                    } else {
+                        Toast.makeText(
+                            activity?.applicationContext,
+                            "${response.errorBody()?.string()}",
+                            Toast.LENGTH_SHORT
+                        ).show()
 
+                    }
+                }
 
-            }else{
-                Toast.makeText(activity?.applicationContext,"${response.errorBody()?.string()}", Toast.LENGTH_SHORT).show()
+            })
+        }
 
-            }
-            }
-        })
     }
-}
 }

@@ -22,9 +22,6 @@
         <action
             android:id="@+id/action_demande_consultation_to_home2"
             app:destination="@id/home2" />
-        <action
-            android:id="@+id/action_demande_consultation_to_choix_photo"
-            app:destination="@id/choix_photo" />
     </fragment>
     <fragment
         android:id="@+id/consultation"
@@ -72,13 +69,4 @@
         android:name="com.example.e_sante.Deconexion"
         android:label="fragment_deconexion"
         tools:layout="@layout/fragment_deconexion" />
-    <fragment
-        android:id="@+id/choix_photo"
-        android:name="com.example.e_sante.Choix_photo"
-        android:label="fragment_choix_photo"
-        tools:layout="@layout/fragment_choix_photo" >
-        <action
-            android:id="@+id/action_choix_photo_to_demande_consultation"
-            app:destination="@id/demande_consultation" />
-    </fragment>
 </navigation>
