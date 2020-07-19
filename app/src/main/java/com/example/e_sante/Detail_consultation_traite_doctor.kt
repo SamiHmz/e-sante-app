@@ -36,9 +36,10 @@ class Detail_consultation_traite_doctor : Fragment() {
 
 ///////////////// recuperation deouis bundle issu de consultation fait doctor ////////////////////////////////////
 
-        val id_consultationn = arguments?.getInt("consultation_id")
+        val demande_id = arguments?.getInt("demande_id")
         val traitement = arguments?.getString("traitement")
         val diagnostique = arguments?.getString("diagnostique")
+        val consultatio_id = arguments?.getInt("consultatio_id")
 
 /////////// Affichage des informations /////////////////////////////////////////
 
@@ -49,8 +50,10 @@ class Detail_consultation_traite_doctor : Fragment() {
 
 ////////////     passage vers fragment modifier consultation_traite_doctor ////////////////////
         DetailConsultation_traite_Button_Modifier.setOnClickListener {
-            if (id_consultationn != null) {
-                GetdemandeByid(id_consultationn)
+            if (demande_id != null) {
+                if (consultatio_id != null) {
+                    GetdemandeByid(demande_id,consultatio_id)
+                }
 
             }
             }
@@ -60,12 +63,12 @@ class Detail_consultation_traite_doctor : Fragment() {
             }
     }
 
-private fun GetdemandeByid(id_consultationn:Int){
+private fun GetdemandeByid(demande_id:Int, consultatio_id:Int){
     var sp : SharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity?.applicationContext)
     var edit : SharedPreferences.Editor = sp.edit()
     var token : String? = sp.getString("x-auth-token","No x-auth-token")
 
-    val call= token?.let { RetrofitService.endpoint.getdemandeById(id_consultationn, it) }
+    val call= token?.let { RetrofitService.endpoint.getdemandeById(demande_id, it) }
     if (call != null) {
         call.enqueue(object : Callback<Demande> {
             override fun onFailure(call: Call<Demande>, t: Throwable) {
@@ -81,7 +84,8 @@ private fun GetdemandeByid(id_consultationn:Int){
                             "symptome" to demande.symptomes,
                             "autre_symptomes" to demande.autre_symptomes,
                         "traitement" to demande.traitement,
-                        "image" to demande.image)
+                        "image" to demande.image,
+                        "consultatio_id" to consultatio_id)
 
                         requireActivity().findNavController(R.id.nav_fragment_doctor)
                             .navigate(R.id.action_detail_consultation_traite_doctor_to_detail_demande_doctor2,bundle)

@@ -35,12 +35,15 @@ class Modifier_consultation_fait_doctor : Fragment() {
 
 
         val id_demande = arguments?.getInt("id")
+        val consultatio_id=  arguments?.getInt("consultatio_id")
 ///////////////   click sur Envoyer demande de refaire la consultation////////////////////////
         ModifierConsultationFaitDoctor_button_Envoyer.setOnClickListener{
 
-            if (id_demande != null) {
-                MidifierConsultation(id_demande)
+
+            if (consultatio_id != null) {
+                MidifierConsultation(consultatio_id)
             }
+
         }
 
 /////////////// botton arriere /////////////

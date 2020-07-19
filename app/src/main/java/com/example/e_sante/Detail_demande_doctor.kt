@@ -37,6 +37,7 @@ class Detail_demande_doctor : Fragment() {
         val autre_symptomes = arguments?.getString("autre_symptomes")
         val traitement = arguments?.getString("traitement")
         val image =  arguments?.getString("image")
+        val consultatio_id = arguments?.getInt("consultatio_id")
 
         DetailDemandeDoctor_textview_symptomes.text=symptomes
         DetailDemandeDoctor_textview_AutreSymptomes.text=autre_symptomes
@@ -48,7 +49,7 @@ class Detail_demande_doctor : Fragment() {
         }
 
         DetailDemandeDoctor_button_traité.setOnClickListener{
-            val bundle = bundleOf("id" to id_demande)
+            val bundle = bundleOf("id" to id_demande, "consultatio_id" to consultatio_id)
 
             requireActivity().findNavController(R.id.nav_fragment_doctor)
                 .navigate(R.id.action_detail_demande_doctor2_to_modifier_consultation_fait_doctor,bundle)
