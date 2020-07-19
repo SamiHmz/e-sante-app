@@ -33,7 +33,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
                     Thread.sleep(3000)
 
-                  if(token !="No x-auth-token"){
+                  if((token !="No x-auth-token")and(token != "")){
                     if(type =="docteur" ){
                         val intent =Intent(baseContext, activity_doctor::class.java)
                         startActivity(intent)

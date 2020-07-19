@@ -140,7 +140,7 @@
                 android:inputType="textEmailAddress"
                 android:paddingLeft="20dp"
                 android:textSize="14dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_percent="0.065"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -154,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="Email"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_constraintStart_toStartOf="@+id/Signup_editText_Email"
                 app:layout_constraintTop_toBottomOf="@+id/Signup_editText_Numero" />
 
