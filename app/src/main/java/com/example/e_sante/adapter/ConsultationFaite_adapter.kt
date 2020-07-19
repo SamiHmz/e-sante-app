@@ -61,9 +61,10 @@ class ConsultationFaite_adapter (val context: Context, var data:List<Consutation
 
         holder.itemView.setOnClickListener{view ->
 ///////a faire le passer des données au fragment du consultion
-            val bundle = bundleOf("consultation_id" to data[position].id,
+            val bundle = bundleOf("demande_id" to data[position].demande_id,
                                         "diagnostique" to data[position].diagnostic,
-                                        "traitement" to data[position].traitemnet)
+                                        "traitement" to data[position].traitemnet,
+                                        "consultatio_id" to data[position].id)
 
 
             view.findNavController().navigate(R.id.action_consultation_faite_doctor_to_detail_consultation_traite_doctor,bundle)

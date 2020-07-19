@@ -16,7 +16,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         var sp : SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         var edit : SharedPreferences.Editor = sp.edit()
-        val lien ="http://5e8f29447717.ngrok.io"
+        val lien ="http://ad92b504dd40.ngrok.io"
         edit.putString("lien",lien)
         edit.apply()
 
